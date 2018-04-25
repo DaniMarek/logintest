@@ -1,0 +1,16 @@
+<% if flash[:main] %>
+  <% flash[:main].each do |e| %>
+    <%= e %>
+  <% end %>
+<% end %>
+<% if current_user%>
+    <form action="" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Log Out">
+  </form>
+<h1>Welcome, <%= current_user.first_name %></h1>
+@secrets = current_user.secrets 
+  <% end %>
+
+
